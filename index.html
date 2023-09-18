@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <h2 id="countdown">Timer <span id="time"></span></h2>
+    <div class="app">
+        <h1> Code Quiz: JavaScript</h1>
+        <p> Welcome to the JavaScript Quiz! You will be presented with 5 code-related questions within 75 seconds:</p>
+        <button id="start-btn">Start Quiz</button>
+    </div>
+    <div class="Quiz">
+        <h2 class="questions">Commonly used data types DO NOT include:</h2>
+        <div class="answer-button">
+            <button class="btn" value="c1" onclick="CorrectAnswer(event)">1. Strings</button>
+            <button class="btn" value="c2" onclick="CorrectAnswer(event)">2. Booleans</button>
+            <button class="btn" value="c3" onclick="CorrectAnswer(event)">3. Alerts</button>
+            <button class="btn" value="c4" onclick="CorrectAnswer(event)">4. Numbers</button>
+        </div>
+    </div>
+    <div class="Quiz">
+        <h2 class="questions">The condition in an if / else statement is enclosed within _________.</h2>
+        <div class="answer-button">
+            <button class="btn" value="c1" onclick="CorrectAnswer(event)">1. quotes</button>
+            <button class="btn" value="c2" onclick="CorrectAnswer(event)">2. curly brackets</button>
+            <button class="btn" value="c3" onclick="CorrectAnswer(event)">3. parenthesis</button>
+            <button class="btn" value="c4" onclick="CorrectAnswer(event)">4. square brackets</button>
+        </div>
+    </div>
+    <div class="Quiz">
+        <h2 class="questions">Arrays in JavaScript can be used to store ___________.</h2>
+        <div class="answer-button">
+            <button class="btn" value="c1" onclick="CorrectAnswer(event)">1. numbers and strings</button>
+            <button class="btn" value="c2" onclick="CorrectAnswer(event)">2. other arrays</button>
+            <button class="btn" value="c3" onclick="CorrectAnswer(event)">3. booleans</button>
+            <button class="btn" value="c4" onclick="CorrectAnswer(event)">4. all of the above</button>
+        </div>
+    </div>
+    <div class="Quiz">
+        <h2 class="questions">String values must be enclosed within ___________ when being assigned to vvariables.</h2>
+        <div class="answer-button">
+            <button class="btn" value="c1" onclick="CorrectAnswer(event)">1. commas</button>
+            <button class="btn" value="c2" onclick="CorrectAnswer(event)">2. curly brackets</button>
+            <button class="btn" value="c3" onclick="CorrectAnswer(event)">3. quotes</button>
+            <button class="btn" value="c4" onclick="CorrectAnswer(event)">4. parenthesis</button>
+        </div>
+    </div>
+    <div class="Quiz">
+        <h2 class="questions">A very useful tool used during development and debugging for printing content to the
+            debugger is:</h2>
+        <div class="answer-button">
+            <button class="btn" value="c1" onclick="CorrectAnswer(event)">1. JavaScript</button>
+            <button class="btn" value="c2" onclick="CorrectAnswer(event)">2. terminal/bash</button>
+            <button class="btn" value="c3" onclick="CorrectAnswer(event)">3. for loops</button>
+            <button class="btn" value="c4" onclick="CorrectAnswer(event)">4. console.log</button>
+        </div>
+    </div>
+
+    <div class="ADone hide">
+        <h1>All done!</h1>
+        <p>Your final score is<span>
+                <div class=""></div>
+            </span></p>
+        <p>Enter initials:</p>
+        <input type="text" id="initials">
+        <button id="AdoneScore">Submit!</button>
+    </div>
+
+    <div class="Scores hide">
+        <h2 id="HighScores">Highscores</h2>
+        <p>High Score:</p>
+        <input type="text" id="CorrectScore">
+        <button class="btn">Go Back</button>
+        <button class="btn">Clear Highscores</button>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>
