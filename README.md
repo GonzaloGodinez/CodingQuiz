@@ -23,25 +23,13 @@ This is an interactive user interface build timed coding quiz sample with multip
 
 # JavaScript initial coding steps
 
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
-```
+## aplication screenshoots
 
-## Mock-Up provided by DU bootcamp
-
-The following animation demonstrates the application functionality:
-
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](.assets/Coding-Quiz-Demo.gif)
+The following screen shoots demonstrates the application functionality:
+![A test image](./assets/CodeQuizMainScreen.png)
+![A test image](./assets/CodingQuiz.png)  
+![A test image](./assets/CodingQuizA.png)  
+![A test image](./assets/CodingQuizB.png)  
 
 License
 

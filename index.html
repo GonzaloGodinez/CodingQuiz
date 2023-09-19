@@ -64,8 +64,7 @@
 
     <div class="ADone hide">
         <h1>All done!</h1>
-        <p>Your final score is<span>
-                <div class=""></div>
+        <p>Your final score is<span id = "final-score">
             </span></p>
         <p>Enter initials:</p>
         <input type="text" id="initials">
@@ -75,9 +74,9 @@
     <div class="Scores hide">
         <h2 id="HighScores">Highscores</h2>
         <p>High Score:</p>
-        <input type="text" id="CorrectScore">
-        <button class="btn">Go Back</button>
-        <button class="btn">Clear Highscores</button>
+        <ul id = "HighScorePlayers"></ul>
+        <button id = "GoBack" class="btn">Go Back</button>
+        <button id = "ClearHS" class="btn">Clear Highscores</button>
     </div>
 
     <script src="./assets/js/script.js"></script>

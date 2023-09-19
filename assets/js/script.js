@@ -7,10 +7,13 @@ var QuizIndex = 0;
 var app = document.querySelector(".app")
 var ADone = document.querySelector(".Adone")
 var time = document.getElementById("time")
+var FinalScore = document.querySelector("#final-score")
 var timeleft = 75
 var clockid = 0
 var CorrectScores = 0
 var IncorrectScore = 0
+var leaderboard = JSON.parse(localStorage.getItem("players")) || []
+var HighScorePlayersel = document.querySelector("#HighScorePlayers")
 // Define 5 questions array
 var questions = [{
     title: "Q1",
@@ -42,6 +45,13 @@ function startQuiz() {
 }
 function startclock() {
     time.textContent = timeleft--
+    if (timeleft <= 0) {
+        console.log("play Again")
+        Quiz[QuizIndex].style.display = "none";
+        FinalScore.textContent = CorrectScores
+        document.querySelector(".ADone").classList.remove("hide")
+        clearInterval(clockid)
+    }
 }
 startButton.addEventListener("click", startQuiz)
 // Add scores 
@@ -49,10 +59,22 @@ function startAlldone() {
     var initials = document.querySelector("#initials").value
     console.log("initials", initials)
     // console.log("value", .value)
+    var player = {
+        initials: initials,
+        scores: CorrectScores
+    }
+    leaderboard.push(player)
+    localStorage.setItem("players", JSON.stringify(leaderboard))
     document.querySelector(".ADone").classList.add("hide")
     document.querySelector(".Scores").classList.remove("hide")
     // add scores
-    setInterval.display = "square"
+    for (let i = 0; i < leaderboard.length; i++) {
+        const element = leaderboard[i];
+        var li = document.createElement("li")
+        li.textContent = leaderboard[i].initials + " scores" + leaderboard[i].scores
+        HighScorePlayersel.append(li);
+    }
+
 }
 // create another function to keep the score from users
 // function startclock() {
@@ -72,19 +94,26 @@ function CorrectAnswer(event) {
         IncorrectScore += 1;
         console.log("IncorrectScore", IncorrectScore)
     }
-    if (timeleft <= 1){
-        console.log("play Again")
-        startQuiz()
-    }
+
     Quiz[QuizIndex].style.display = "none";
     QuizIndex++
     if (QuizIndex >= questions.length) {
         // var CorrectScore = document.querySelector("#CorrectScore").value
+        FinalScore.textContent = CorrectScores
         document.querySelector(".ADone").classList.remove("hide")
+        clearInterval(clockid)
         return
     } else {
         Quiz[QuizIndex].style.display = "block";
     }
 }
-// Add event listener to generate button
-generateBtn.addEventListener("click", CorrectScore);
+// Add event listener to button
+document.querySelector("#GoBack").addEventListener("click", function () {
+    window.location.reload();
+})
+// need to complete goback step 
+document.querySelector("#ClearHS").addEventListener("click", function () {
+    localStorage.clear();
+    HighScorePlayersel.textContent=""
+    // generateBtn.addEventListener("click", CorrectScore);
+})
